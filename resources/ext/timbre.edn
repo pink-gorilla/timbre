@@ -1,5 +1,4 @@
 {:name "timbre"
-  :lazy false
-  :cljs-namespace [modular.log]
-  :cljs-ns-bindings {'timbre-config! {'header-main modular.log/timbre-config!}}
- }
+ :lazy false
+ :cljs-namespace [modular.log]
+ :cljs-ns-bindings {'modular.log {'timbre-config! modular.log/timbre-config!}}}
