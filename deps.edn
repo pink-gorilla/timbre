@@ -1,0 +1,31 @@
+{:paths ["src"
+         "resources" ; extension , resources used in devtools ui
+         ]
+ :deps {org.clojure/clojure    {:mvn/version "1.11.1"}
+        ; logging
+        com.taoensso/timbre {:mvn/version "6.2.2"} ; clj/cljs logging
+        ; config to log slf4j output to console:
+        com.fzakaria/slf4j-timbre {:mvn/version "0.4.0"} ; https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
+        }
+
+ :aliases
+ {; github ci  
+  :build {:deps {io.github.clojure/tools.build {:mvn/version "0.9.6"}
+                 slipset/deps-deploy {:mvn/version "0.2.1"}
+                 babashka/fs {:mvn/version "0.0.5"}}
+          :ns-default build}
+
+  ;; demo
+
+  :demo-log-default
+  {:extra-paths ["src-demo"]
+   :exec-args {:custom-config false}
+   :exec-fn logging/demo}
+
+  :demo-log-custom
+  {:extra-paths ["src-demo"]
+   :exec-args {:custom-config true}
+   :exec-fn logging/demo}
+
+;
+  }}
