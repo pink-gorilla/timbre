@@ -3,4 +3,6 @@
  :cljs-namespace [modular.log]
  :cljs-ns-bindings {'modular.log {'timbre-config! modular.log/timbre-config!}}
  :cljs-service {:config-fn webly.spa.service/cljs-config-simple
-                :start-fn modular.log/timbre-config!}}
+                :start-fn modular.log/timbre-config!
+                :default-config {:min-level [[#{"org.eclipse.jetty.*"} :warn]
+                                             [#{"*"} :info]]}}}
