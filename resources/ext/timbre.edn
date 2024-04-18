@@ -1,4 +1,6 @@
-{:name "timbre"
+{:name "timbre/cljs"
  :lazy false
  :cljs-namespace [modular.log]
- :cljs-ns-bindings {'modular.log {'timbre-config! modular.log/timbre-config!}}}
+ :cljs-ns-bindings {'modular.log {'timbre-config! modular.log/timbre-config!}}
+ :cljs-service {:config-fn webly.spa.service/cljs-config-simple
+                :start-fn modular.log/timbre-config!}}
