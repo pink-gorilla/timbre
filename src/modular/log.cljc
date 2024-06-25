@@ -24,7 +24,7 @@
 (defn timbre-config! [{:keys [min-level appenders]
                        :or {min-level :info
                             appenders default-appenders}
-                       :as config}]
+                       :as _config}]
     ; use println, because at timbre configuration it is not sure where logging
     ; output would be written to.
   (println "timbre config min-level: " min-level "appenders: "  appenders)
